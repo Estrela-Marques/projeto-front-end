@@ -110,13 +110,13 @@ export function Content() {
           />
           <textarea 
             onChange={handleInputValueminibio} 
-            placeholder="Digite a minibiografia"
+            placeholder="Digite uma minibiografia"
             value={minibio}
             className={styles.formTextArea}
           />
           <textarea 
             onChange={handleInputValueCitacao} 
-            placeholder="Digite a citação"
+            placeholder="Digite uma citação"
             value={citacao}
             className={styles.formTextArea}
           />
