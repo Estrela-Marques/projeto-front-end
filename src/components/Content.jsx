@@ -10,7 +10,7 @@ import styles from '../styles/content.module.css'
 export function Content() {
   const [repositories, setRepositories] = useState([])
   const [nome, setNome] = useState('')
-  const [minibio, setminibio] = useState('')
+  const [biografia, setbiografia] = useState('')
   const [citacao, setCitacao] = useState('')
   const [imagem, setImagem] = useState('')
   const [success, setSuccess] = useState(false)
@@ -28,8 +28,8 @@ export function Content() {
     setNome(event.target.value)
   }
 
-  function handleInputValueminibio(event) {
-    setminibio(event.target.value)
+  function handleInputValuebiografia(event) {
+    setbiografia(event.target.value)
   }
 
   function handleInputValueImagem(event) {
@@ -43,13 +43,13 @@ export function Content() {
   function handleCreateMessage(event) {
     event.preventDefault()
 
-    console.log('mensagem enviada', nome, citacao, minibio, imagem)
+    console.log('mensagem enviada', nome, citacao, biografia, imagem)
 
     async function sendData() {
       await Axios.post(baseURL, {
         nome: nome,
         citacao: citacao,
-        minibio: minibio,
+        biografia: biografia,
         imagem: imagem
       })
       const response = await Axios.get(baseURL)
@@ -59,7 +59,7 @@ export function Content() {
 
     setSuccess(true)
     setNome('')
-    setminibio('')
+    setbiografia('')
     setImagem('')
     setCitacao('')
   }
@@ -84,7 +84,7 @@ export function Content() {
                   <summary className={styles.cardRepoSummary}>
                     {repo.nome}
                   </summary>
-                  <p className={styles.cardRepoText}>{repo.minibio}</p>
+                  <p className={styles.cardRepoText}>{repo.biografia}</p>
                   <q className={styles.cardRepoQuote}>{repo.citacao}</q>
                 </details>
               </div>
@@ -109,9 +109,9 @@ export function Content() {
             className={styles.formTextArea}
           />
           <textarea 
-            onChange={handleInputValueminibio} 
+            onChange={handleInputValuebiografia} 
             placeholder="Digite uma minibiografia"
-            value={minibio}
+            value={biografia}
             className={styles.formTextArea}
           />
           <textarea 
