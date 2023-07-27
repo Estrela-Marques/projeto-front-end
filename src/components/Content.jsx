@@ -68,7 +68,7 @@ export function Content() {
     <>
       <Header
         title='Mulheres em Tech Brasil'
-        subtitle='Conheça personalidades femininas que estão transformando a tecnologia no Brasil'
+        subtitle='Conheça as personalidades femininas que tranformam e transformaram a tecnologia'
         image={listaImg}
       />
       <div className={styles.projectsContainer}>
@@ -94,7 +94,7 @@ export function Content() {
         </div>
       </div>
       <div >
-        <h2 className={styles.projectsTitle}>Cadastre uma rainha tech:</h2>
+        <h2 className={styles.projectsTitle}>Cadastre uma mulher inspiradora da tecnologia:</h2>
         <form  className={styles.form} onSubmit={handleCreateMessage}>
           <input 
             onChange={handleInputValueNome} 
